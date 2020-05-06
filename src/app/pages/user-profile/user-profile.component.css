@@ -1,0 +1,17 @@
+.main-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+.card-container {
+    background-color: #EAEDF4;
+}
+
+.card-content {
+    margin-top: 2em;
+}
+
+.avatar-border-color {
+    border: 2px solid #2196f3;
+}

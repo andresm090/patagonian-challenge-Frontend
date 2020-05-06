@@ -1,0 +1,13 @@
+.main-container {
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.login-titulo {
+    padding: 3rem 6rem 0 6rem;
+    font-family: Muli;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 40px;
+    color: #444444;
+}

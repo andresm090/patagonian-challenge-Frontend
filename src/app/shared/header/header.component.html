@@ -1,0 +1,42 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color" [containerInside]="false">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/']">Patagonian</a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul *ngIf="isLoggedIn" class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link waves-light" [routerLink]="['/galery']" mdbWavesEffect>Galería</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" [routerLink]="['/compras']" mdbWavesEffect>Compras</a>
+      </li>
+    </ul>
+    <!-- Links -->
+    
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li *ngIf="!isLoggedIn" class="nav-item">
+        <a class="nav-link waves-light" [routerLink]="['/login']" mdbWavesEffect>Ingresar<span class="sr-only"></span></a>
+      </li>
+      <li *ngIf="isLoggedIn" class="nav-item">
+        <a class="nav-link">
+          <div class="btn-group" mdbDropdown>
+            <img *ngIf="user.photoUrl" src="{{ user.photoUrl }}" height="35" width="35" class="rounded-circle z-depth-0" alt="avatar image" mdbDropdownToggle>
+            <mdb-icon *ngIf="!(user.photoUrl)" fas icon="user" mdbDropdownToggle></mdb-icon>
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+              <a class="dropdown-item" [routerLink]="['/profile']">Mi perfil</a>
+              <a class="dropdown-item" (click)="logout()">Logout</a>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

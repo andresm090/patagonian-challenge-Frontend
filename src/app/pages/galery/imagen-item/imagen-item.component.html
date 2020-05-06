@@ -1,0 +1,9 @@
+<mat-card class="card-container">
+    <img mat-card-image [src]="item.imagenUrl" alt="imagen galery">
+    <mat-card-content class="card-content">
+        <p>{{item.description}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button class="btn-danger" (click)="showMessage()">Borrar</button>
+      </mat-card-actions>
+</mat-card>

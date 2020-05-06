@@ -1,0 +1,11 @@
+<app-galery-form></app-galery-form>
+
+ <!-- Default form login -->
+
+ <div class="container-fluid main-container-galery">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let item of imagenItems">
+        <app-imagen-item [item]="item"></app-imagen-item>
+      </div>
+    </div>
+  </div>

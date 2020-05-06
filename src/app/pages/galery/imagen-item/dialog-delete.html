@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Borrar Imagen</h1>
+<div mat-dialog-content>
+  <p>Esta seguro que desea borrar esta imagen?</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button class="btn btn-success btn-sm" (click)="delete(data.id)" cdkFocusInitial>Si</button>
+    <button mat-button class="btn btn-primary btn-sm" (click)="close()">No, Gracias</button>
+</div>

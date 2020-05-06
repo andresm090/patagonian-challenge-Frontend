@@ -1,0 +1,58 @@
+  <!-- form add new imagen item -->
+<div class="main-container">
+  <mat-accordion>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title> Cargar nueva Imagen </mat-panel-title>
+        </mat-expansion-panel-header>
+        
+        <div class="container-fluid main-container">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col-md-10 animated">
+                    <div class="imagen-item-card-body">
+                        <!-- Form -->
+                        <form [formGroup]="imagenItemForm" (ngSubmit)="onSubmit(imagenItemForm.value)" class="text-center" style="color: #757575;">
+                            
+                            <div class="form-row mb-12">
+                                <div class="col-md-6">
+                                        <div class="formGroup">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <label class="btn btn-outline-primary btn-rounded waves-effect">
+                                                        Imagen
+                                                        <input type="file" formControlName="imagenUrl" accept="image/*" (change)="fileChangeEvent($event)">
+                                                    </label>
+                                                </div>
+                                                <div *ngIf="!imagenString" class="col-md-8">
+                                                    <p class="help-block text-left">Seleccione una imagen</p>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="justify-content-center align-items-center">
+                                                    <img [src]="imagenString" [style.border]="imagenString ? '1px solid black' : 'none'" class="img-fluid"/>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                <!-- Description -->
+                                <textarea type="text" id="description" class="md-textarea form-control" mdbInput formControlName="description" placeholder="Descripcion"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+
+                                <!-- Submit button -->
+                                <button mdbBtn color="info" block="true" class="my-4" type="submit">Nueva Imagen <span *ngIf="showLoader" class="spinner-grow spinner-grow-sm text-black" role="status" aria-hidden="true"></span></button>
+                            </div>
+                        </form>
+                    <!-- Form -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>
+</div>

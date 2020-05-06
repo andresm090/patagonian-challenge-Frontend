@@ -1,0 +1,24 @@
+<div class="main-container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 animated fadeIn">
+            <mat-card class="card-container">
+                <mat-card-header>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img *ngIf="user.photoUrl" src="{{ user.photoUrl }}" height="150px" width="150px" class="rounded-circle z-depth-0 float-right avatar-border-color" alt="avatar image">
+                            <mdb-icon *ngIf="!(user.photoUrl)" fas icon="user" size="10x"></mdb-icon>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-card-title>{{ user.username }}</mat-card-title>
+                            <mat-card-subtitle>{{ user.lastname }} {{ user.name }}</mat-card-subtitle>
+                        </div>
+                    </div>
+                </mat-card-header>
+
+                <mat-card-content class="card-content">
+                    <mat-label><mdb-icon fas icon="envelope"></mdb-icon><strong> Email:</strong> {{ user.email }}</mat-label>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
